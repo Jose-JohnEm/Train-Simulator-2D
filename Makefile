@@ -7,16 +7,18 @@
 
 MAIN     	=	main.cpp				\
 
-CC			=	g++ -I.include -W -Wall -Wextra -g -g3
+JDK			=	src/JoseDK/window.cpp				\
+
+CFLAGS		=	-W -Wall -Wextra -g -g3 -I.include
 
 SFLIB		=	-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
-OBJ			=	$(MAIN:.cpp=.o)
+OBJ			=	$(MAIN:.cpp=.o) $(JDK:.cpp=.o)
 
 NAME		=	TS2D
 
 all:	$(OBJ)
-	$(CC) $(OBJ) $(SFLIB) -o $(NAME)
+	g++ $(OBJ) $(SFLIB) -o $(NAME) $(CFLAGS)
 
 clean:
 	rm -f $(OBJ)

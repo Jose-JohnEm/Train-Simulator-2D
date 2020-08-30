@@ -1,17 +1,21 @@
 #ifndef THROTTLE_H
 #define THROTTLE_H
 
-#include <RectangleShape.hpp>
-#include <CircleShape.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
 
-class Throttle
+namespace JDK
 {
-    public:
-        Throttle();
-        ~Throttle();
+    class Throttle
+    {
+        public:
+            Throttle();
+            ~Throttle();
 
-    private:
+        private:
 
-};
+    };
+
+}
 
 #endif

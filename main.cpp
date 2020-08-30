@@ -4,11 +4,11 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-#include <JoseDK.h>
+#include "include/JoseDK.h"
 
 int main(int ac, char *av[])
 {
-    sf::RenderWindow window(sf::VideoMode(1280, 720), "Train Simulator 2D - Lyon Edition");
+    JDK::Window window(sf::VideoMode(1280, 720), "Train Simulator 2D - Lyon Edition");
 
     sf::Font font;
     font.loadFromFile("Others/fonts/FakeHope.ttf");

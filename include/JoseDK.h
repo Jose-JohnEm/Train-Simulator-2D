@@ -2,17 +2,8 @@
 #define _JDK_H
 
 #include "throttle.h"
+#include "window.h"
 
-class JDK
-{
-public:
-    JDK();
-    ~JDK();
-
-    Throttle Throttle;
-
-private:
-
-};
+#include <SFML/Graphics/RenderWindow.hpp>
 
 #endif
