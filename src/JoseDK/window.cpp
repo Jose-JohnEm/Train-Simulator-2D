@@ -1,17 +1,25 @@
 #include "../../include/window.h"
 
-JDK::Window::Window() : sf::RenderWindow()
+using namespace JDK;
+
+Window::Window() : sf::RenderWindow()
 {
 
 }
 
-JDK::Window::Window(sf::VideoMode mode, const sf::String &title, sf::Uint32 style, const sf::ContextSettings &settings)
+Window::Window(sf::VideoMode mode, const sf::String &title, sf::Uint32 style, const sf::ContextSettings &settings)
 : sf::RenderWindow(mode, title, style, settings)
 {
 
 }
 
-JDK::Window::~Window()
+Window::~Window()
 {
 
+}
+
+void Window::drawJDK(JDK::Throttle item)
+{
+    draw(item.getButton());
+    draw(item.getTige());
 }

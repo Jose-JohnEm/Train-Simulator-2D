@@ -4,7 +4,8 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-#include "include/JoseDK.h"
+#include "include/throttle.h"
+#include "include/window.h"
 
 int main(int ac, char *av[])
 {
@@ -20,6 +21,8 @@ int main(int ac, char *av[])
     speed.setPosition(500, 500);
     speed.setCharacterSize(100);
 
+    JDK::Throttle trl(500, 500, false);
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -31,6 +34,7 @@ int main(int ac, char *av[])
 
         window.clear();
         window.draw(speed);
+        window.drawJDK(trl);
         window.display();
     }
 
