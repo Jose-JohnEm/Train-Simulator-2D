@@ -7,9 +7,9 @@
 
 MAIN     	=	main.cpp				\
 
-CC			=	g++ -I.Sf/include/SFML -W -Wall -Wextra -g -g3
+CC			=	g++ -I.include -W -Wall -Wextra -g -g3
 
-SFLIB		=	-L.Sf/lib -lsfml-graphics -lsfml-audio -lsfml-system -lsfml-window
+SFLIB		=	-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 OBJ			=	$(MAIN:.cpp=.o)
 
