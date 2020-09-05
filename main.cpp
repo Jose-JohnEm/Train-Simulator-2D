@@ -21,7 +21,7 @@ int main(int ac, char *av[])
     speed.setPosition(500, 500);
     speed.setCharacterSize(100);
 
-    JDK::Throttle trl(500, 500, false);
+    JDK::Throttle trl(100, 700);
 
     while (window.isOpen())
     {
