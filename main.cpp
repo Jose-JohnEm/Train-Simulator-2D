@@ -15,10 +15,13 @@ int main(int ac, char *av[])
 
     JDK::Text title("Train Simulator 2D", "Others/fonts/FakeHope.ttf", 100);
 
-    title.setPosition(500, 500);
+    title.setPosition(200, 0);
     title.setCharacterSize(100);
 
     JDK::Throttle trl(100, 700);
+
+    JDK::Number num(124, "Others/fonts/FakeHope.ttf", 100);
+    num.setPosition(300, 300);
 
     while (window.isOpen())
     {
@@ -31,6 +34,7 @@ int main(int ac, char *av[])
 
         window.clear();
         window.draw(title);
+        window.draw(num);
         window.drawJDK(trl);
         window.display();
     }
