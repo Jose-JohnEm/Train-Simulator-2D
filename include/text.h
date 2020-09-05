@@ -18,4 +18,4 @@ namespace JDK
     };
 };
 
-#endif TEXT_H
+#endif

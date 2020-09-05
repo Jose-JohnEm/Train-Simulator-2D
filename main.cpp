@@ -6,20 +6,17 @@
 
 #include "include/throttle.h"
 #include "include/window.h"
+#include "include/text.h"
+#include "include/number.h"
 
 int main(int ac, char *av[])
 {
     JDK::Window window(sf::VideoMode(1280, 720), "Train Simulator 2D - Lyon Edition");
 
-    sf::Font font;
-    font.loadFromFile("Others/fonts/FakeHope.ttf");
+    JDK::Text title("Train Simulator 2D", "Others/fonts/FakeHope.ttf", 100);
 
-    sf::Text speed;
-
-    speed.setString("124");
-    speed.setFont(font);
-    speed.setPosition(500, 500);
-    speed.setCharacterSize(100);
+    title.setPosition(500, 500);
+    title.setCharacterSize(100);
 
     JDK::Throttle trl(100, 700);
 
@@ -33,7 +30,7 @@ int main(int ac, char *av[])
         }
 
         window.clear();
-        window.draw(speed);
+        window.draw(title);
         window.drawJDK(trl);
         window.display();
     }

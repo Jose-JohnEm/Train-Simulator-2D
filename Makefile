@@ -9,6 +9,8 @@ MAIN     	=	main.cpp				\
 
 JDK			=	src/JoseDK/window.cpp				\
 				src/JoseDK/throttle.cpp				\
+				src/JoseDK/number.cpp				\
+				src/JoseDK/text.cpp				\
 
 CFLAGS		=	-W -Wall -Wextra -g -g3 -I.include
 
