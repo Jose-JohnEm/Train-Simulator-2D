@@ -6,9 +6,15 @@
 
 namespace JDK
 {
-    class Text
+    class Text : public sf::Text
     {
+        public:
+            Text(std::string fontPath);
+            Text(const sf::String &string, std::string fontPath, unsigned int characterSize = 30);
+            ~Text();
 
+        private:
+            sf::Font textFont;
     };
 };
 
