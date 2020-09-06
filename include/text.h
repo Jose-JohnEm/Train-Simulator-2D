@@ -4,8 +4,19 @@
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
 
+#include <map>
+
 namespace JDK
 {
+    const std::string FONT_PATH = "Others/fonts/";
+
+    namespace STYLE
+    {
+        const std::string TITLE = "bla";
+        const std::string LCD = "FakeHope.ttf";
+    };
+
+
     class Text : public sf::Text
     {
         public:
