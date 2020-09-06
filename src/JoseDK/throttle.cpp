@@ -75,48 +75,37 @@ Number Throttle::getNumber()
     return value;
 }
 
-bool rightClick(sf::Event event)
-{
-    if (event.type != sf::Event::MouseButtonPressed) {
-        return false;
-    }
-    if (event.mouseButton.button != sf::Mouse::Right) {
-        return false;
-    }
-    return true;
-}
-
 #include <iostream>
 using namespace std;
 
-#define dbg cout << sf::Mouse::getPosition().x << "\n"
-#define dbc cout << sf::Mouse::getPosition().y << "\n"
-
-bool leftClick(sf::Event event)
-{
-    if (!sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-        return false;
-    }
-    return true;
-}
-
-bool clickOn(sf::Event event, sf::RectangleShape elem)
+bool clickOn(sf::RectangleShape elem)
 {
     sf::IntRect rect(elem.getPosition().x, elem.getPosition().y,
         elem.getGlobalBounds().width, elem.getGlobalBounds().height);
 
     if (rect.contains(sf::Mouse::getPosition())) {
-        dbg;
         return true;
     }
-    //cout << "nooooo !\n";
     return false;
 }
 
 void Throttle::onEvent(sf::Event event)
 {
-    //dbg;
-    if (/*leftClick(event) &&*/ clickOn(event, button)) {
-        button.setPosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
+    float delta = event.mouseWheelScroll.delta * -10;
+    int interval = tige.getPosition().y + tige.getSize().y - button.getPosition().y;
+    int level = value.getValue();
+
+    if (delta > 1000 || delta < -1000) return;
+
+    if (button.getPosition().y < tige.getPosition().y && delta < 0) {
+        return;
     }
+    if (button.getPosition().y > tige.getPosition().y + tige.getSize().y && delta > 0) {
+        return;
+    }
+
+    button.move(0, delta);
+    interval = tige.getPosition().y + tige.getSize().y - button.getPosition().y;
+    value.setValue(interval / 25 - 10);
+
 }

@@ -13,6 +13,9 @@ int main(int ac, char *av[])
 {
     JDK::Window window(sf::VideoMode(1280, 720), "Train Simulator 2D - Lyon Edition");
 
+    window.setPosition(sf::Vector2i(0,0));
+    window.setFramerateLimit(60);
+
     JDK::Throttle trl(100, 700);
 
     JDK::Number speed(149, JDK::STYLE::LATO, 100);

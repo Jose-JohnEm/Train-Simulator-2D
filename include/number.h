@@ -18,6 +18,8 @@ namespace JDK
             void setValue(int value);
             void setValue(std::string value);
 
+            void add(int value);
+
             int getValue();
             std::string getValueStr();
 

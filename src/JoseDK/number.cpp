@@ -47,6 +47,11 @@ void Number::setValue(std::string value)
     this->setString(value);
 }
 
+void Number::add(int val)
+{
+    this->value += val;
+}
+
 int Number::getValue()
 {
     return this->value;

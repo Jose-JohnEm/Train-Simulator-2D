@@ -5,6 +5,7 @@
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Shape.hpp>
 #include <SFML/Window/Event.hpp>
+#include <SFML/System/Clock.hpp>
 #include "number.h"
 
 namespace JDK
@@ -30,6 +31,7 @@ namespace JDK
             sf::RectangleShape tige;
             sf::RectangleShape button;
             Number value;
+            sf::Clock clock;
 
             void initThrottle();
     };
