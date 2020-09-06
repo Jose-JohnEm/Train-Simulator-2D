@@ -15,6 +15,9 @@ int main(int ac, char *av[])
 
     JDK::Throttle trl(100, 700);
 
+    JDK::Number speed(149, JDK::STYLE::LATO, 100);
+    speed.setPosition(500, 500);
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -22,10 +25,12 @@ int main(int ac, char *av[])
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+            trl.onEvent(event);
         }
 
         window.clear();
         window.drawJDK(trl);
+        window.draw(speed);
         window.display();
     }
 

@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/Shape.hpp>
+#include <SFML/Window/Event.hpp>
 #include "number.h"
 
 namespace JDK
@@ -21,6 +23,8 @@ namespace JDK
             sf::RectangleShape getTige();
             sf::RectangleShape getButton();
             Number getNumber();
+
+            void onEvent(sf::Event event);
 
         private:
             sf::RectangleShape tige;

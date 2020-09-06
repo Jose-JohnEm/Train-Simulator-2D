@@ -14,6 +14,7 @@ namespace JDK
     {
         const std::string TITLE = "bla";
         const std::string LCD = "FakeHope.ttf";
+        const std::string LATO = "Lato-Black.ttf";
     };
 
 

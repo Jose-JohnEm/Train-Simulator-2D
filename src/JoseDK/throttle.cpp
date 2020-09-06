@@ -52,7 +52,7 @@ void Throttle::setPosition(int x, int y, bool central)
     size = tige.getSize();
 
     button.setPosition(position.x + size.x / 2, position.y + size.y / 2);
-    value.setPosition(position.x + 70, position.y + size.y / 2 - 10);
+    value.setPosition(position.x + 100, position.y + size.y / 2 - 10);
 }
 
 void Throttle::setPosition(sf::Vector2f position, bool central)
@@ -73,4 +73,50 @@ sf::RectangleShape Throttle::getTige()
 Number Throttle::getNumber()
 {
     return value;
+}
+
+bool rightClick(sf::Event event)
+{
+    if (event.type != sf::Event::MouseButtonPressed) {
+        return false;
+    }
+    if (event.mouseButton.button != sf::Mouse::Right) {
+        return false;
+    }
+    return true;
+}
+
+#include <iostream>
+using namespace std;
+
+#define dbg cout << sf::Mouse::getPosition().x << "\n"
+#define dbc cout << sf::Mouse::getPosition().y << "\n"
+
+bool leftClick(sf::Event event)
+{
+    if (!sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+        return false;
+    }
+    return true;
+}
+
+bool clickOn(sf::Event event, sf::RectangleShape elem)
+{
+    sf::IntRect rect(elem.getPosition().x, elem.getPosition().y,
+        elem.getGlobalBounds().width, elem.getGlobalBounds().height);
+
+    if (rect.contains(sf::Mouse::getPosition())) {
+        dbg;
+        return true;
+    }
+    //cout << "nooooo !\n";
+    return false;
+}
+
+void Throttle::onEvent(sf::Event event)
+{
+    //dbg;
+    if (/*leftClick(event) &&*/ clickOn(event, button)) {
+        button.setPosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
+    }
 }
