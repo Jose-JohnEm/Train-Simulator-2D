@@ -22,4 +22,5 @@ void Window::drawJDK(JDK::Throttle item)
 {
     draw(item.getButton());
     draw(item.getTige());
+    draw(item.getNumber());
 }

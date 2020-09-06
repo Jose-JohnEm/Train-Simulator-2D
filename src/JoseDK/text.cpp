@@ -2,17 +2,20 @@
 
 using namespace JDK;
 
-Text::Text(std::string fontPath)
+Text::Text() : sf::Text()
 {
-    textFont.loadFromFile(FONT_PATH + fontPath);
-    this->setFont(textFont);
+
+}
+
+Text::Text(std::string fontPath) : sf::Text()
+{
+    setFontPath(fontPath);
 }
 
 Text::Text(const sf::String &string, std::string fontPath, unsigned int characterSize)
+: sf::Text()
 {
-
-    textFont.loadFromFile(FONT_PATH + fontPath);
-    this->setFont(textFont);
+    setFontPath(fontPath);
 
     this->setString(string);
     this->setCharacterSize(characterSize);
@@ -21,4 +24,10 @@ Text::Text(const sf::String &string, std::string fontPath, unsigned int characte
 Text::~Text()
 {
 
+}
+
+void Text::setFontPath(std::string fontPath)
+{
+    textFont.loadFromFile(FONT_PATH + fontPath);
+    this->setFont(textFont);
 }

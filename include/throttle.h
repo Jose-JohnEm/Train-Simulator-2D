@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
+#include "number.h"
 
 namespace JDK
 {
@@ -19,10 +20,12 @@ namespace JDK
 
             sf::RectangleShape getTige();
             sf::RectangleShape getButton();
+            Number getNumber();
 
         private:
             sf::RectangleShape tige;
             sf::RectangleShape button;
+            Number value;
 
             void initThrottle();
     };

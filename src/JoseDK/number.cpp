@@ -2,6 +2,11 @@
 
 using namespace JDK;
 
+Number::Number() : Text()
+{
+    
+}
+
 Number::Number(std::string fontPath) : Text(fontPath)
 {
 

@@ -21,6 +21,11 @@ Throttle::Throttle(sf::Vector2f position, bool central)
 
 void Throttle::initThrottle()
 {
+    value.setFontPath(STYLE::LCD);
+    value.setCharacterSize(100);
+    value.setValue(0);
+    value.setOrigin(0, value.getCharacterSize() / 2);
+
     tige.setSize(sf::Vector2f(30, 500));
     button.setSize(sf::Vector2f(80, 40));
     
@@ -47,6 +52,7 @@ void Throttle::setPosition(int x, int y, bool central)
     size = tige.getSize();
 
     button.setPosition(position.x + size.x / 2, position.y + size.y / 2);
+    value.setPosition(position.x + 70, position.y + size.y / 2 - 10);
 }
 
 void Throttle::setPosition(sf::Vector2f position, bool central)
@@ -62,4 +68,9 @@ sf::RectangleShape Throttle::getButton()
 sf::RectangleShape Throttle::getTige()
 {
     return tige;
+}
+
+Number Throttle::getNumber()
+{
+    return value;
 }
