@@ -91,6 +91,25 @@ bool clickOn(sf::RectangleShape elem)
 
 void Throttle::onEvent(sf::Event event)
 {
+    throttlePower(event);
+
+    throttleValueColor();
+}
+
+void Throttle::throttleValueColor()
+{
+    int val(value.getValue());
+    if (val > 0) {
+        value.setFillColor(sf::Color::Green);
+    } else if (val < 0) {
+        value.setFillColor(sf::Color::Red);
+    } else {
+        value.setFillColor(sf::Color::White);
+    }
+}
+
+void Throttle::throttlePower(sf::Event event)
+{
     float delta = event.mouseWheelScroll.delta * -10;
     int interval = tige.getPosition().y + tige.getSize().y - button.getPosition().y;
     int level = value.getValue();
@@ -107,5 +126,4 @@ void Throttle::onEvent(sf::Event event)
     button.move(0, delta);
     interval = tige.getPosition().y + tige.getSize().y - button.getPosition().y;
     value.setValue(interval / 25 - 10);
-
 }

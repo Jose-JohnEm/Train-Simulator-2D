@@ -10,7 +10,9 @@ MAIN     	=	main.cpp				\
 JDK			=	src/JoseDK/window.cpp				\
 				src/JoseDK/throttle.cpp				\
 				src/JoseDK/number.cpp				\
-				src/JoseDK/text.cpp				\
+				src/JoseDK/text.cpp					\
+
+SRC			=	src/speedometer.cpp			\
 
 CFLAGS		=	-W -Wall -Wextra -g -g3 -I.include
 

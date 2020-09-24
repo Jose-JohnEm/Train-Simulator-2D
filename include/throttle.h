@@ -26,6 +26,8 @@ namespace JDK
             Number getNumber();
 
             void onEvent(sf::Event event);
+            void throttlePower(sf::Event event);
+            void throttleValueColor();
 
         private:
             sf::RectangleShape tige;

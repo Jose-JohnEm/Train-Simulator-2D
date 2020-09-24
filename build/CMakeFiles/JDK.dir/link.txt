@@ -1,0 +1,2 @@
+/usr/bin/ar qc libJDK.a CMakeFiles/JDK.dir/src/JoseDK/number.cpp.o CMakeFiles/JDK.dir/src/JoseDK/text.cpp.o CMakeFiles/JDK.dir/src/JoseDK/throttle.cpp.o CMakeFiles/JDK.dir/src/JoseDK/window.cpp.o
+/usr/bin/ranlib libJDK.a

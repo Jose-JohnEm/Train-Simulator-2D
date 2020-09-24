@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/TS2D.dir/main.cpp.o -o TS2D  libJDK.a 
