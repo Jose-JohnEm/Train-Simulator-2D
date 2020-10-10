@@ -24,3 +24,9 @@ void Window::drawJDK(JDK::Throttle item)
     draw(item.getTige());
     draw(item.getNumber());
 }
+
+void Window::drawJDK(Speedometer item)
+{
+    drawJDK(item.throttle);
+    drawJDK();
+}

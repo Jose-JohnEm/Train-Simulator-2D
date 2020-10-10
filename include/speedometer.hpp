@@ -2,8 +2,8 @@
 #define SPEEDOMETER_H
 
 #include <memory>
-#include "throttle.h"
-#include "number.h"
+#include "throttle.hpp"
+#include "number.hpp"
 
 class Speedometer
 {
@@ -12,8 +12,8 @@ class Speedometer
         ~Speedometer();
 
     private:
-        std::shared_ptr<JDK::Throttle> throttle;
-        std::shared_ptr<JDK::Number> speed;
+        JDK::Throttle throttle;
+        JDK::Number speed;
 
 };
 

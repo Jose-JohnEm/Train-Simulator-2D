@@ -1,7 +1,7 @@
 #ifndef NUMBER_H
 #define NUMBER_H
 
-#include "text.h"
+#include "text.hpp"
 
 namespace JDK
 {

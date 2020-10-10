@@ -14,16 +14,20 @@ JDK			=	src/JoseDK/window.cpp				\
 
 SRC			=	src/speedometer.cpp			\
 
-CFLAGS		=	-W -Wall -Wextra -g -g3 -I.include
+INC_DIR		=	include
+
+CFLAGS		=	-W -Wall -Wextra -g -g3
 
 SFLIB		=	-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
-OBJ			=	$(MAIN:.cpp=.o) $(JDK:.cpp=.o)
+OBJ			=	$(MAIN:.cpp=.o) $(JDK:.cpp=.o) $(SRC:.c:.o)
 
 NAME		=	TS2D
 
+CC			=	g++ -I$(INC_DIR)
+
 all:	$(OBJ)
-	g++ $(OBJ) $(SFLIB) -o $(NAME) $(CFLAGS)
+	$(CC) $(OBJ) $(SFLIB) -o $(NAME) $(CFLAGS)
 
 clean:
 	rm -f $(OBJ)

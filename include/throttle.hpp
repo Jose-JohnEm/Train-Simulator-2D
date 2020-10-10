@@ -6,7 +6,7 @@
 #include <SFML/Graphics/Shape.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/System/Clock.hpp>
-#include "number.h"
+#include "number.hpp"
 
 namespace JDK
 {

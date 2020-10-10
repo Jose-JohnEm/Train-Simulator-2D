@@ -31,6 +31,8 @@
 *.out
 *.app
 
+build/
+
 TS2D
 
 .vscode

@@ -2,7 +2,8 @@
 #define WINDOW_H
 
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "throttle.h"
+#include "throttle.hpp"
+#include "speedometer.hpp"
 
 namespace JDK
 {
@@ -16,6 +17,7 @@ namespace JDK
         ~Window();
 
         void drawJDK(JDK::Throttle item);
+        void drawJDK(Speedometer item);
         
     private:
         std::vector<sf::Drawable> toPrint;

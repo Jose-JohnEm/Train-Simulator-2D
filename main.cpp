@@ -4,10 +4,11 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-#include "include/throttle.h"
-#include "include/window.h"
-#include "include/text.h"
-#include "include/number.h"
+#include "throttle.hpp"
+#include "window.hpp"
+#include "include/text.hpp"
+#include "include/number.hpp"
+#include "include/speedometer.hpp"
 
 int main(int ac, char *av[])
 {
@@ -15,6 +16,8 @@ int main(int ac, char *av[])
 
     window.setPosition(sf::Vector2i(0,0));
     window.setFramerateLimit(60);
+
+    Speedometer spd;
 
     JDK::Throttle trl(100, 700);
 

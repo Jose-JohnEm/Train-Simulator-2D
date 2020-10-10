@@ -1,8 +1,0 @@
-/home/jose/Repository/Train-Simulator-2D/build/CMakeFiles/install/local.dir
-/home/jose/Repository/Train-Simulator-2D/build/CMakeFiles/TS2D.dir
-/home/jose/Repository/Train-Simulator-2D/build/CMakeFiles/install/strip.dir
-/home/jose/Repository/Train-Simulator-2D/build/CMakeFiles/JDK.dir
-/home/jose/Repository/Train-Simulator-2D/build/CMakeFiles/edit_cache.dir
-/home/jose/Repository/Train-Simulator-2D/build/CMakeFiles/rebuild_cache.dir
-/home/jose/Repository/Train-Simulator-2D/build/CMakeFiles/list_install_components.dir
-/home/jose/Repository/Train-Simulator-2D/build/CMakeFiles/install.dir
