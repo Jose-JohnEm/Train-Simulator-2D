@@ -1,9 +1,9 @@
 #ifndef SPEEDOMETER_H
 #define SPEEDOMETER_H
 
-#include <memory>
 #include "throttle.hpp"
 #include "number.hpp"
+#include <SFML/System/Clock.hpp>
 
 class Speedometer
 {
@@ -11,9 +11,15 @@ class Speedometer
         Speedometer();
         ~Speedometer();
 
+        JDK::Throttle getThrottle();
+        JDK::Number getNumber();
+        void onEvent(sf::Event event);
+        void refreshSpeed();
+
     private:
         JDK::Throttle throttle;
         JDK::Number speed;
+        sf::Clock clock;
 
 };
 

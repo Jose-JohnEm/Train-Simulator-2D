@@ -1,4 +1,4 @@
-#include "../../include/throttle.h"
+#include "throttle.hpp"
 
 using namespace JDK;
 
@@ -112,7 +112,6 @@ void Throttle::throttlePower(sf::Event event)
 {
     float delta = event.mouseWheelScroll.delta * -10;
     int interval = tige.getPosition().y + tige.getSize().y - button.getPosition().y;
-    int level = value.getValue();
 
     if (delta > 1000 || delta < -1000) return;
 

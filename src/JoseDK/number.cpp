@@ -1,4 +1,4 @@
-#include "../../include/number.h"
+#include "number.hpp"
 
 using namespace JDK;
 
@@ -38,7 +38,13 @@ Number::~Number()
 void Number::setValue(int value)
 {
     this->value = value;
-    this->setString(std::to_string(value));
+    this->setString(std::to_string((int)value));
+}
+
+void Number::setValue(float value)
+{
+    this->value = value;
+    this->setString(std::to_string((int)value));
 }
 
 void Number::setValue(std::string value)
@@ -47,9 +53,16 @@ void Number::setValue(std::string value)
     this->setString(value);
 }
 
+void Number::add(float val)
+{
+    this->value += val;
+    this->setString(std::to_string((int)value));
+}
+
 void Number::add(int val)
 {
     this->value += val;
+    this->setString(std::to_string((int)value));
 }
 
 int Number::getValue()

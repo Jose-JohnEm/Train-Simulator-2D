@@ -15,16 +15,17 @@ namespace JDK
             Number(const sf::String &value, std::string fontPath, unsigned int characterSize = 30);
             ~Number();
 
-            void setValue(int value);
+            void setValue(float value);
             void setValue(std::string value);
+            void setValue(int value);
 
-            void add(int value);
+            void add(float value);
 
             int getValue();
             std::string getValueStr();
 
         private:
-            int value;
+            float value;
     };
 
 };

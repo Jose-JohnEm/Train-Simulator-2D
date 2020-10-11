@@ -6,9 +6,9 @@
 
 #include "throttle.hpp"
 #include "window.hpp"
-#include "include/text.hpp"
-#include "include/number.hpp"
-#include "include/speedometer.hpp"
+#include "text.hpp"
+#include "number.hpp"
+#include "speedometer.hpp"
 
 int main(int ac, char *av[])
 {
@@ -19,11 +19,6 @@ int main(int ac, char *av[])
 
     Speedometer spd;
 
-    JDK::Throttle trl(100, 700);
-
-    JDK::Number speed(149, JDK::STYLE::LATO, 100);
-    speed.setPosition(500, 500);
-
     while (window.isOpen())
     {
         sf::Event event;
@@ -31,14 +26,17 @@ int main(int ac, char *av[])
         {
             if (event.type == sf::Event::Closed)
                 window.close();
-            trl.onEvent(event);
+            spd.onEvent(event);
         }
 
+        spd.refreshSpeed();
+
         window.clear();
-        window.drawJDK(trl);
-        window.draw(speed);
+        window.drawJDK(spd);
         window.display();
     }
 
+    (void)ac;
+    (void)av;
     return 0;
 } 

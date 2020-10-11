@@ -1,4 +1,4 @@
-#include "../../include/window.h"
+#include "window.hpp"
 
 using namespace JDK;
 
@@ -27,6 +27,6 @@ void Window::drawJDK(JDK::Throttle item)
 
 void Window::drawJDK(Speedometer item)
 {
-    drawJDK(item.throttle);
-    drawJDK();
+    drawJDK(item.getThrottle());
+    draw(item.getNumber());
 }
