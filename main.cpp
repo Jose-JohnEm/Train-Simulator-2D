@@ -1,16 +1,7 @@
-#include <SFML/Audio.hpp>
-#include <SFML/Config.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-
-#include "throttle.hpp"
 #include "window.hpp"
-#include "text.hpp"
-#include "number.hpp"
 #include "speedometer.hpp"
 
-int main(int ac, char *av[])
+int main(void)
 {
     JDK::Window window(sf::VideoMode(1280, 720), "Train Simulator 2D - Lyon Edition");
 
@@ -19,24 +10,30 @@ int main(int ac, char *av[])
 
     Speedometer spd;
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
+    JDK::Number time(0, JDK::STYLE::LATO);
+    time.setPosition(500, 100);
+    sf::Clock clock;
+
+    sf::Event event;
+    
+    while (window.isOpen()) {
+        while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
             spd.onEvent(event);
+        }
+        if (clock.getElapsedTime().asSeconds() >= 1) {
+            time.add(1);
+            clock.restart();
         }
 
         spd.refreshSpeed();
 
         window.clear();
+        window.draw(time);
         window.drawJDK(spd);
         window.display();
     }
-
-    (void)ac;
-    (void)av;
+ //45//
     return 0;
 } 

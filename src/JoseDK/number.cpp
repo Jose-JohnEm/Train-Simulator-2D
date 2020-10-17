@@ -59,12 +59,6 @@ void Number::add(float val)
     this->setString(std::to_string((int)value));
 }
 
-void Number::add(int val)
-{
-    this->value += val;
-    this->setString(std::to_string((int)value));
-}
-
 int Number::getValue()
 {
     return this->value;

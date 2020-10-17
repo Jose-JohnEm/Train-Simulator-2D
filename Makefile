@@ -1,11 +1,5 @@
-##
-## EPITECH PROJECT, 2019
-## Makefile
-## File description:
-## infinadd
-##
 
-MAIN     	=	main.cpp				\
+MAIN     	=	main.cpp							\
 
 JDK			=	src/JoseDK/window.cpp				\
 				src/JoseDK/throttle.cpp				\
@@ -23,7 +17,7 @@ OBJ			=	$(MAIN:.cpp=.o) $(JDK:.cpp=.o) $(SRC:.cpp=.o)
 NAME		=	TS2D
 
 all:	$(OBJ)
-	$(CXX) $(OBJ) $(SFLIB) -o $(NAME) $(CFLAGS)
+	$(CXX) $(OBJ) $(SFLIB) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)

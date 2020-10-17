@@ -37,10 +37,18 @@ float limits(float value)
     return value;
 }
 
+int sq(int nb)
+{
+    return nb * nb;
+}
+
 void Speedometer::refreshSpeed()
 {
-    if (clock.getElapsedTime().asMilliseconds() > 100) {
-        speed.add(0.04 * throttle.getNumber().getValue());
+    if (clock.getElapsedTime().asMilliseconds() >= 100) {
+        speed.add((0.0088 * throttle.getNumber().getValue()) * 3.6);
+        
+        
+        
         clock.restart();
     }
 }
