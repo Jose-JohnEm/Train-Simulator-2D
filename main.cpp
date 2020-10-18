@@ -1,5 +1,5 @@
-#include "window.hpp"
-#include "speedometer.hpp"
+#include <JoseDK/window.hpp>
+#include <JoseDK/speedometer.hpp>
 
 int main(void)
 {
@@ -10,10 +10,6 @@ int main(void)
 
     Speedometer spd;
 
-    JDK::Number time(0, JDK::STYLE::LATO);
-    time.setPosition(500, 100);
-    sf::Clock clock;
-
     sf::Event event;
     
     while (window.isOpen()) {
@@ -22,18 +18,11 @@ int main(void)
                 window.close();
             spd.onEvent(event);
         }
-        if (clock.getElapsedTime().asSeconds() >= 1) {
-            time.add(1);
-            clock.restart();
-        }
-
         spd.refreshSpeed();
 
         window.clear();
-        window.draw(time);
         window.drawJDK(spd);
         window.display();
     }
- //45//
     return 0;
 } 

@@ -1,4 +1,4 @@
-#include "../include/speedometer.hpp"
+#include "speedometer.hpp"
 #include <iostream>
 
 Speedometer::Speedometer() : throttle(100, 700), speed(0, JDK::STYLE::LATO, 100)
@@ -37,18 +37,21 @@ float limits(float value)
     return value;
 }
 
-int sq(int nb)
-{
-    return nb * nb;
-}
-
 void Speedometer::refreshSpeed()
 {
-    if (clock.getElapsedTime().asMilliseconds() >= 100) {
-        speed.add((0.0088 * throttle.getNumber().getValue()) * 3.6);
-        
-        
-        
+    float a(0);
+
+    if (clock.getElapsedTime().asMilliseconds() > 100) {
+        a = throttle.getNumber().getValue();
+        a *= 0.0088;
+        a *= 3.6;
+        if (a > 0) {
+            a *= 1.f - (float)speed.getValue() / 150.f;
+        } else {
+            a -= (float)speed.getValue() / (150.f * 8.f);
+        }
+
+        speed.add(a);
         clock.restart();
     }
 }
